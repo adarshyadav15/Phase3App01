@@ -1,0 +1,11 @@
+﻿<h1> @ViewBag.msg</h1>
+<hr />
+<br />
+@{var user = ViewBag.user;}
+<p>
+    <a asp-action="CreateProduct">Create Product</a>
+    <a asp-action="ViewProduct" asp-route-id=@user>View All Products</a>
+    <a asp-controller="Seller" asp-action="Edit" asp-route-id=@user>Edit Profile</a> |
+    <a asp-action="Delete">Delete Profile</a>
+
+</p>

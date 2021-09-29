@@ -1,0 +1,29 @@
+﻿
+@model FinalModel
+<h1>Order Confirmation</h1>
+@if (Model != null)
+{
+    <h2>Thank You for your Order !!</h2>
+    <table>
+        <thead>
+            <tr>
+                
+                <th>Item Name</th>
+                <th>Item Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cate in Model.CartDetail11)
+            {
+                <tr>
+                    
+                    <td>@cate.Itemname</td>
+                    <td>@cate.Itemprice.ToString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+    
+}

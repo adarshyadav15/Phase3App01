@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Phase3App01.Models.SellerDb1>
+
+@{
+    ViewData["Title"] = "ViewSeller";
+}
+
+<h1>ViewSeller</h1>
+
+<p>
+    <a asp-action="CreateSeller">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Sname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Saddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Spassword)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Saddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Spassword)
+            </td>
+            <td>
+                <a asp-action="EditSeller" asp-route-id="@item.Susername">Edit</a> |
+                <a asp-action="DetailsSeller" asp-route-id="@item.Susername">Details</a> |
+                <a asp-action="DeleteSeller" asp-route-id="@item.Susername">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
